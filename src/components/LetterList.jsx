@@ -1,12 +1,10 @@
 import LetterItem from "./LetterItem";
-
-function LetterList({ letters }) {
-  return (
-    <ul>
-      {letters.map((letter) => (
-        <li key={letter.id}>{letter.content}</li>
-      ))}
-    </ul>
-  );
+function LetterList({ letters }){
+    return(
+        <div style={{marginTop: "20px"}}>
+            {letters.length === 0 && <p>Chưa có latter nào</p>}
+            {letters.map((letter)=> (<LetterItem key={letter.id} letter={letter}/>))}
+        </div>
+    )
 }
-export default LetterList;
+export default LetterList
